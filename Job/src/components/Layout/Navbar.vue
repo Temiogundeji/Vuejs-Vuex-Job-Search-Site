@@ -3,7 +3,9 @@
       <nav class="navbar is-transparent">
   <div class="navbar-brand">
     <a class="navbar-item" href="https://bulma.io">
-      <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+      <h1>
+         Jobsite
+      </h1>
     </a>
     <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
       <span></span>
@@ -15,11 +17,11 @@
   <div id="navbarExampleTransparentExample" class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item" href="https://bulma.io/">
-        Ade
+        Home
       </a>
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link" href="/documentation/overview/start/">
-         Ho;y
+          Docs
         </a>
         <div class="navbar-dropdown is-boxed">
           <a class="navbar-item" href="/documentation/overview/start/">
@@ -52,21 +54,23 @@
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://localhost:4000" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://localhost:4000&amp;via=jgthms">
+            <a class=" button">
               <span class="icon">
                 <i class="fab fa-twitter"></i>
               </span>
               <span>
-                Tweet
+               <router-link to="/sign-up">Sign Up</router-link>
               </span>
             </a>
           </p>
           <p class="control">
-            <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.7.1/bulma-0.7.1.zip">
+            <a class="button is-primary" href="#">
               <span class="icon">
                 <i class="fas fa-download"></i>
               </span>
-              <span>Download</span>
+              <span>
+                <router-link to="/login">Login</router-link>
+              </span>
             </a>
           </p>
         </div>
@@ -77,8 +81,19 @@
     </div>
 </template>
 <script>
+import siteLogin from  '@/components/pages/siteLogin.vue';
+import signUp from '@/components/Pages/signUp.vue'
     export default {
-        name: 'nav-bar'
+        name: 'nav-bar',
+        components:{
+          'site-login':siteLogin,
+          'sign-up':signUp
+        },
+        data (){
+          return{
+            // showLogin:false
+          }
+        }
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -107,6 +122,8 @@
 
 });
 </script>
-<style>
-
+<style scoped>
+  .navbar.has-shadow {
+    box-shadow: 0 2px 0 0 #f5f5f5;
+}
 </style>

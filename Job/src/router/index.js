@@ -1,17 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
 import landingPage from '@/components/Pages/landingPage.vue'
+import siteLogin  from '@/components/Pages/siteLogin.vue'
+import signUp from '@/components/Pages/signUp.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name:'HelloWorld',
-    //   component: HelloWorld
-    // },
-    {path: '/', name: 'landing-page', component: landingPage}
+    {path: '/', name: 'landing-page', component: landingPage},
+    {path: '/login', name: 'site-login', component: siteLogin},
+    {path: '/signup', name: 'sign-up', component: signUp}
   ]
 })
